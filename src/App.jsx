@@ -80,11 +80,13 @@ function App() {
 
   return (
     <>
-      {products.map((item)=>{
-        return(
-          <Product name={item.name} price={item.price} discount={item.discount} present={item.present} newPrice={item.newPrice} image={item.image} tastes={item.tastes}/>
-        )     
-      })}
+      <div className="products">
+        {products.map((item)=>{
+          return(
+            <Product name={item.name} price={item.price} discount={item.discount} present={item.present} newPrice={item.newPrice} image={item.image} tastes={item.tastes}/>
+          )     
+        })}
+      </div>
     </>
   )
 }
