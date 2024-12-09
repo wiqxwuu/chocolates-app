@@ -1,4 +1,5 @@
 import './App.css'
+import Product from './components/Product'
 
 let products = [
   {
@@ -7,6 +8,7 @@ let products = [
     discount: false,
     present: 0,
     newPrice: 45,
+    tastes: [],
     image: "https://basket-01.wbbasket.ru/vol131/part13145/13145112/images/big/1.webp"
   },
   {
@@ -15,6 +17,7 @@ let products = [
     discount: true,
     present: 5,
     newPrice: 76,
+    tastes: [],
     image: "https://content2.rozetka.com.ua/goods/images/big/462583856.jpg"
   },
   {
@@ -41,6 +44,7 @@ let products = [
     discount: false,
     present: 0,
     newPrice: 80,
+    tastes: [],
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe9ILXU4jwBmDwzJIh3Bvcllqorn1OSyGZSRPMTBwwGlam3C4b_c7XRZGHQevoJNmubiQ&usqp=CAU"
   },
   {
@@ -49,6 +53,7 @@ let products = [
     discount: true,
     present: 5,
     newPrice: 88,
+    tastes: [],
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNsAQB8uxC4lIIgw6e3RGU1da6Lby4TWLlmQ&s"
   },
   {
@@ -66,6 +71,7 @@ let products = [
     discount: true,
     present: 10,
     newPrice: 171,
+    tastes: [],
     image: "https://basket-02.wbbasket.ru/vol254/part25422/25422840/images/big/1.webp"
   }
 ]
@@ -74,7 +80,11 @@ function App() {
 
   return (
     <>
- 
+      {products.map((item)=>{
+        return(
+          <Product name={item.name} price={item.price} discount={item.discount} present={item.present} newPrice={item.newPrice} image={item.image} tastes={item.tastes}/>
+        )     
+      })}
     </>
   )
 }
